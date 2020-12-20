@@ -39,7 +39,7 @@
             <!-- <a class='dropdown-item' href='#'>プロフィール</a> -->
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
             <!-- <a class='dropdown-item' href='#'>ログアウト</a> -->
-            <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
+            <%= link_to 'ログアウト', logout_path, method: :delete, class: 'dropdown-item' %>
           </div>
         </li>
       </ul>

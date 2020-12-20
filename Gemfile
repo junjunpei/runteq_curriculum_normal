@@ -36,10 +36,15 @@ gem 'font-awesome-sass', '~> 5.15.1'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 
+gem 'sorcery'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
   # 変更しないでください
   gem 'rubocop'
   gem 'rubocop-rails'
