@@ -38,6 +38,8 @@ gem 'jquery-rails'
 
 gem 'sorcery'
 
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
