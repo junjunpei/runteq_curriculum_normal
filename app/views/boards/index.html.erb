@@ -1,0 +1,50 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+      <!-- 検索フォーム -->
+      <form>
+        <div class="input-group mb-3"><input class="form-control" placeholder="検索ワード" type="search"/>
+          <div class="input-group-append"><input type="submit" value="検索" class="btn btn-primary"/></div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 掲示板一覧 -->
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @boards.present? %>
+          <%= @boards.each do |board| %>
+            <div class="col-sm-12 col-lg-4 mb-3">
+              <div id="board-id-#{board.id}">
+                <div class="card"><%= image_tag 'board_placeholder.png', class: 'card-img-top', width: '300px', height: '200px' %>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <!-- <a href="#">タイトル0</a> -->
+                      <%= link_to board.title, '#' %>
+                    </h4>
+                    <div class='mr10 float-right'>
+                      <%= link_to '#', id: 'button-edit-#{board.id}' do %>
+                        <%= icon 'fa', 'pen' %>
+                      <% end %>
+                      <%= link_to '#', id: 'button-delete-#{board.id}', method: :delete, data: {confirm: ''} do %>
+                        <%= icon 'fas', 'trash' %>
+                      <% end %>
+                    </div>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><i class="far fa-user"></i><%= board.user.decorate.full_name %></li>
+                      <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.created_at %></li>
+                    </ul>
+                    <p class="card-text"><%= board.body %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <h4><%= t '.no_data' %></h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

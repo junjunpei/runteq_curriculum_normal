@@ -1,9 +1,5 @@
-class UserDecorator < Draper::Decorator
+class BoardDecorator < ApplicationDecorator
   delegate_all
-
-  def full_name
-    "#{object.last_name} #{object.first_name}"
-  end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #

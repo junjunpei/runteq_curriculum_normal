@@ -14,18 +14,17 @@
           <a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
             <%= t 'activerecord.models.board' %>
           </a>
-
           <div class='dropdown-menu dropdown-menu-right'>
             <!-- <a class='dropdown-item' href='#'>掲示板一覧</a> -->
-            <%= link_to (t 'user_sessions.boards.index.title'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'boards.index.title'), boards_path, class: 'dropdown-item' %>
             <!-- <a class='dropdown-item' href='#'>掲示板作成</a> -->
-            <%= link_to (t 'user_sessions.boards.new.title'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'boards.new.title'), '#', class: 'dropdown-item' %>
           </div>
         </li>
 
         <li class='nav-item'>
           <!-- <a class='nav-link' href='#'>ブックマーク一覧</a -->
-          <%= link_to (t 'user_sessions.boards.bookmarks.title'), '#', class: 'nav-link' %>
+          <%= link_to (t 'boards.bookmarks.title'), '#', class: 'nav-link' %>
         </li>
 
         <li class='nav-item dropdown dropdown-slide'>
@@ -37,7 +36,7 @@
             <div class='dropdown-item'><%= current_user.decorate.full_name %></div>
             <div class='dropdown-divider'></div>
             <!-- <a class='dropdown-item' href='#'>プロフィール</a> -->
-            <%= link_to (t 'user_sessions.profiles.show.title'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'profiles.show.title'), '#', class: 'dropdown-item' %>
             <!-- <a class='dropdown-item' href='#'>ログアウト</a> -->
             <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'dropdown-item' %>
           </div>
