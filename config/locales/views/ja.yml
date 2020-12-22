@@ -3,7 +3,9 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
-    require_login: 'ログインしてください'
+    create: '作成'
+    message:
+      require_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -24,9 +26,12 @@ ja:
   boards:
     index:
       title: '掲示板一覧'
-      no_data: '掲示板がありません。'
+      no_result: '掲示板がありません。'
     new:
       title: '掲示板作成'
+    create:
+      success: '掲示板を作成しました'
+      fail: '掲示板を作成できませんでした'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
@@ -34,4 +39,6 @@ ja:
       title: 'プロフィール'
   time:
     formats:
-      default: '%Y/%m/%d %H:%M'
+      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+      long: "%Y/%m/%d %H:%M"
+      short: "%m/%d %H:%M"

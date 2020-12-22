@@ -14,35 +14,9 @@
     <div class="col-12">
       <div class="row">
         <% if @boards.present? %>
-          <%= @boards.each do |board| %>
-            <div class="col-sm-12 col-lg-4 mb-3">
-              <div id="board-id-#{board.id}">
-                <div class="card"><%= image_tag 'board_placeholder.png', class: 'card-img-top', width: '300px', height: '200px' %>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <!-- <a href="#">タイトル0</a> -->
-                      <%= link_to board.title, '#' %>
-                    </h4>
-                    <div class='mr10 float-right'>
-                      <%= link_to '#', id: 'button-edit-#{board.id}' do %>
-                        <%= icon 'fa', 'pen' %>
-                      <% end %>
-                      <%= link_to '#', id: 'button-delete-#{board.id}', method: :delete, data: {confirm: ''} do %>
-                        <%= icon 'fas', 'trash' %>
-                      <% end %>
-                    </div>
-                    <ul class="list-inline">
-                      <li class="list-inline-item"><i class="far fa-user"></i><%= board.user.decorate.full_name %></li>
-                      <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.created_at %></li>
-                    </ul>
-                    <p class="card-text"><%= board.body %></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <% end %>
+          <%= render @boards %>
         <% else %>
-          <h4><%= t '.no_data' %></h4>
+          <p><%= t ('.no_result') %><p>
         <% end %>
       </div>
     </div>
