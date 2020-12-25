@@ -4,6 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     create: '登録する'
+    post: '投稿'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -31,6 +32,10 @@ ja:
       no_result: '掲示板がありません。'
     new:
       title: '掲示板作成'
+    show:
+      title: '掲示板詳細'
+      cansell: 'キャンセル'
+      update: '更新'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
@@ -41,16 +46,3 @@ ja:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
-  errors:
-    messages:
-      carrierwave_processing_error: '処理できませんでした'
-      carrierwave_integrity_error: 'は許可されていないファイルタイプです'
-      carrierwave_download_error: 'はダウンロードできません'
-      extension_whitelist_error: 'は jpg, jpeg, gif, pngの形式でアップロードしてください'
-      extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
-      content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
-      content_type_blacklist_error: "%{content_type}ファイルのアップロードは許可されていません"
-      rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
-      mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
-      min_size_error: "を%{min_size}以上のサイズにしてください"
-      max_size_error: "を%{max_size}以下のサイズにしてください"
