@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
- before_action :set_board, only: [:edit, :update, :destroy]
+  before_action :set_board, only: %i[edit update destroy]
 
   def index
     @boards = Board.all.includes(:user).order(created_at: :desc)
@@ -25,8 +25,7 @@ class BoardsController < ApplicationController
     @comments = @board.comments.includes(:user).order(created_at: :desc)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @board.update(board_params)
