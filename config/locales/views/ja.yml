@@ -5,10 +5,14 @@ ja:
     logout: 'ログアウト'
     create: '登録する'
     post: '投稿'
+    update: '更新'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
   users:
     new:
       title: 'ユーザー登録'
@@ -36,6 +40,8 @@ ja:
       title: '掲示板詳細'
       cansell: 'キャンセル'
       update: '更新'
+    edit:
+      title: '掲示板編集'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
