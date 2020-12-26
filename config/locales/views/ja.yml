@@ -5,7 +5,7 @@ ja:
     logout: 'ログアウト'
     create: '登録する'
     post: '投稿'
-    update: '更新'
+    update: '更新する'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
