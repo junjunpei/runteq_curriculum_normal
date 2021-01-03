@@ -3,9 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
-    create: '登録する'
     post: '投稿'
-    update: '更新する'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -13,6 +11,9 @@ ja:
       updated: "%{item}を更新しました"
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
+      bookmark: 'ブックマークしました'
+      unbookmark: 'ブックマークを外しました'
   users:
     new:
       title: 'ユーザー登録'
@@ -44,6 +45,7 @@ ja:
       title: '掲示板編集'
     bookmarks:
       title: 'ブックマーク一覧'
+      no_result: 'ブックマーク中の掲示板がありません'
   profiles:
     show:
       title: 'プロフィール'

@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   before_action :set_board, only: %i[edit update destroy]
 
   def index
-    @boards = Board.all.includes(:user).order(created_at: :desc)
+    @boards = Board.all.includes(:user).recent
   end
 
   def new
@@ -37,8 +37,12 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board.destroy
+    @board.destroy!
     redirect_to boards_path, success: (t 'defaults.message.deleted', item: Board.model_name.human)
+  end
+
+  def bookmarks
+    @bookmark_boards = current_user.bookmark_boards.includes(:user).recent
   end
 
   private

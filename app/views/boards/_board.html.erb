@@ -8,7 +8,13 @@
           <%= link_to board.title, board_path(board) %>
         </h4>
         <% if current_user.own?(board) %>
-          <%= render 'crud_menus', board: board %>
+          <div class='mr10 float-right'>
+            <%= render 'crud_menus', board: board if current_user.own?(board) %>
+          </div>
+        <% else %>
+          <div class='mr10 float-right'>
+            <%= render 'bookmarks/bookmark_area', board: board %>
+          </div>
         <% end %>
         <ul class="list-inline">
           <li class="list-inline-item"><i class="far fa-user"></i><%= board.user.decorate.full_name %></li>
