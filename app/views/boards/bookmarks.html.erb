@@ -10,12 +10,13 @@
       </form>
     </div>
   </div>
+
   <!-- 掲示板一覧 -->
   <div class="row">
     <div class="col-12">
       <div class="row">
         <% if @bookmark_boards.present? %>
-          <%= render @bookmark_boards, collection: @bookmark_boards %>
+          <%= render @bookmark_boards %>
         <% else %>
           <p><%= t('.no_result') %><p>
         <% end %>
