@@ -7,8 +7,6 @@ class Board < ApplicationRecord
   validates :title,   presence: true, length: { maximum: 255 }
   validates :body,    presence: true, length: { maximum: 65_535 }
 
-  paginates_per 20
-
   def bookmark_by?(user)
     bookmarks.where(user_id: user.id).exists?
   end
