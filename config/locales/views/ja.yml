@@ -5,6 +5,8 @@ ja:
     logout: 'ログアウト'
     post: '投稿'
     search_word: '検索ワード'
+    edit: '編集'
+    submit: '送信'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -13,6 +15,8 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
+      send_email: 'パスワードリセット手順を送信しました'
+      changed_password: 'パスワードを変更しました'
   users:
     new:
       title: 'ユーザー登録'
@@ -53,10 +57,13 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
-      edit: '編集'
-      full_name: '氏名'
     edit:
       title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+    edit:
+      title: 'パスワードリセット'
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"

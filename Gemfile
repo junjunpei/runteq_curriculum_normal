@@ -56,6 +56,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'letter_opener_web'
   # 変更しないでください
   gem 'rubocop'
   gem 'rubocop-rails'

@@ -1,8 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
-  def show; end
-
   def edit; end
 
   def update
@@ -14,6 +12,8 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def show; end
+
   private
 
   def set_user
@@ -21,6 +21,6 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :avatar)
+    params.require(:user).permit(:email, :last_name, :first_name, :avatar)
   end
 end
