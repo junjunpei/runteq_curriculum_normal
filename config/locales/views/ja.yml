@@ -4,6 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
+    search_word: '検索ワード'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -52,6 +53,10 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+      edit: '編集'
+      full_name: '氏名'
+    edit:
+      title: 'プロフィール編集'
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
