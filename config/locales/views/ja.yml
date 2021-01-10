@@ -6,7 +6,7 @@ ja:
     post: '投稿'
     search_word: '検索ワード'
     edit: '編集'
-    submit: '送信'
+    password_reset: 'パスワードリセット'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -15,8 +15,7 @@ ja:
       not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
-      send_email: 'パスワードリセット手順を送信しました'
-      changed_password: 'パスワードを変更しました'
+      no_authority: '権限がありません'
   users:
     new:
       title: 'ユーザー登録'
@@ -62,8 +61,26 @@ ja:
   password_resets:
     new:
       title: 'パスワードリセット申請'
+      submit: '送信'
     edit:
       title: 'パスワードリセット'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
   time:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
