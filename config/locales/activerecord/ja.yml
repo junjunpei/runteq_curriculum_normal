@@ -19,3 +19,8 @@ ja:
         board_image: 'サムネイル'
       comment:
         body: 'コメント'
+  enums:
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
