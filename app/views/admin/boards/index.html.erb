@@ -3,7 +3,7 @@
   <h1><%= t('.title') %></h1>
   <div class="row">
     <div class="col-md-12 mb-3">
-      <%= render 'search_form', url: admin_boards_path %>
+      <%= render 'search_form' %>
     </div>
   </div>
   <div class="row">
@@ -11,28 +11,22 @@
       <table class="table table-striped">
         <thread>
           <tr>
-            <th scope="col"><%= t('defults.id') %></th>
-            <th scope="col"><%= t(Board.human_attribute_name(:title)) %></th>
-            <th scope="col"><%= t('defaults.author') %></th>
-            <th scope="col"><%= t('defaults.created_at') %></th>
+            <th scope="col"><%= Board.human_attribute_name(:id) %></th>
+            <th scope="col"><%= Board.human_attribute_name(:title) %></th>
+            <th scope="col"><%= Board.human_attribute_name(:user) %></th>
+            <th scope="col"><%= Board.human_attribute_name(:created_at) %></th>
             <th scope="col"></th>
           </tr>
+        </thread>
         <tbody>
-          <% @boards.each do |board| %>
-            <tr>
-              <td><%= board.id %></td>
-              <td><%= link_to board.title, admin_board_path(board) %></td>
-              <td><%= board.user.decorate.full_name %></td>
-              <td><%= board.created_at %></td>
-              <td>
-                <%= link_to t('defaults.edit'), edit_admin_board_path(board), class: 'btn btn-success' %>
-                <%= link_to t('defaults.delete'), admin_board_path(board), class: 'btn btn-danger', method: :delete, data: { confirm: "掲示板「#{board.title}」を削除します。よろしいですか？" } %>
-              </td>
-            </tr>
-          <% end %>
+          <%= render @boards %>
         </tbody>
       </table>
     </div>
   </div>
-  <%= paginate @boards %>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= paginate @boards %>
+    </div>
+  </div>
 </div>

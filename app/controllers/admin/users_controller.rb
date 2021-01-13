@@ -1,12 +1,10 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :set_user, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[edit update show destroy]
 
   def index
-    @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true).recent.page(params[:page])
+    # @q = User.ransack(params[:q])
+    # @users = @q.result(distinct: true).recent.page(params[:page])
   end
-
-  def show; end
 
   def edit; end
 
@@ -19,6 +17,8 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def show; end
+
   def destroy
     @user.destroy!
     redirect_to admin_users_path, success: t('defaults.message.deleted', item: User.model_name.human)
@@ -27,7 +27,7 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:email, :last_name, :first_name, :avatar, :role)
+    params.require(:user).permit(:email, :last_name, :first_name, :avatar, :avatar_cache, :role)
   end
 
   def set_user

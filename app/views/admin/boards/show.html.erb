@@ -5,29 +5,29 @@
       <h1><%= t('.title') %></h1>
       <div class="text-right mb-3">
         <%= link_to t('defaults.edit'), edit_admin_board_path(@board), class: 'btn btn-success' %>
-        <%= link_to t('defaults.delete'), admin_board_path(@board), class: 'btn btn-danger', method: :delete, data: { confirm: "掲示板「#{@board.title}」を削除します。よろしいですか？" } %>
+        <%= link_to t('defaults.delete'), admin_board_path(@board), class: 'btn btn-danger', method: :delete, data: { confirm: t('defaults.message.delete_confirm') } %>
       </div>
       <table class="table table-bordered bg-white">
         <tbody>
           <tr>
-            <th scope="row"><%= t('defaults.id') %></th>
+            <th scope="row"><%= Board.human_attribute_name(:id) %></th>
             <td><%= @board.id %></td>
           </tr>
           <tr>
-            <th scope="row"><%= t(Board.human_attribute_name(:title)) %></th>
+            <th scope="row"><%= Board.human_attribute_name(:title) %></th>
             <td><%= @board.title %></td>
           </tr>
           <tr>
-            <th scope="row"><%= t('defaults.author') %></th>
+            <th scope="row"><%= Board.human_attribute_name(:user) %></th>
             <td><%= @board.user.decorate.full_name %></td>
           </tr>
           <tr>
-            <th scope="row"><%= t(Board.human_attribute_name(:body)) %></th>
+            <th scope="row"><%= Board.human_attribute_name(:body) %></th>
             <td><%= @board.body %></td>
           </tr>
           <tr>
-            <th scope="row"><%= t('defaults.created_at') %></th>
-            <td><%= @board.created_at %></td>
+            <th scope="row"><%= Board.human_attribute_name(:created_at) %></th>
+            <td><%= l @board.created_at, format: :long %></td>
           </tr>
         </tbody>
       </table>

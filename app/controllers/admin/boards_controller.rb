@@ -1,12 +1,10 @@
 class Admin::BoardsController < Admin::BaseController
-  before_action :set_board, only: %i[show edit update destroy]
+  before_action :set_board, only: %i[edit update show destroy]
 
   def index
     @q = Board.ransack(params[:q])
     @boards = @q.result(distinct: true).includes(:user).recent.page(params[:page])
   end
-
-  def show; end
 
   def edit; end
 
@@ -18,6 +16,8 @@ class Admin::BoardsController < Admin::BaseController
       render :edit
     end
   end
+
+  def show; end
 
   def destroy
     @board.destroy!
