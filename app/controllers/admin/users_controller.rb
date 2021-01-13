@@ -2,8 +2,8 @@ class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: %i[edit update show destroy]
 
   def index
-    # @q = User.ransack(params[:q])
-    # @users = @q.result(distinct: true).recent.page(params[:page])
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).recent.page(params[:page])
   end
 
   def edit; end
